@@ -5,11 +5,11 @@ import { checkout, paymentVerification, razorpayApiKey } from "../controllers/pa
 
 const router = Router()
 
-router.get('/key', isLoggedIn, razorpayApiKey)
+router.get('/key',  razorpayApiKey)
 
-router.post('/checkout', isLoggedIn, checkout)
+router.post('/checkout',  checkout)
 
-router.post('/status', isLoggedIn, paymentVerification)
+router.post('/status',  paymentVerification)
 
 
 export default router
