@@ -9,7 +9,7 @@ import {
     updateProduct
 } from '../controllers/product.controllers.js';
 
-import { isLoggedIn, authorizedUser } from '../middlewares/auth.middleware.js';
+import {  authorizedUser } from '../middlewares/auth.middleware.js';
 import upload from '../middlewares/multer.middleware.js';
 
 // Creating a new instance of the Express Router
@@ -19,13 +19,13 @@ const router = Router();
 router.route('/').get(getProductList);
 
 // Route to create a new course (HTTP POST method)
-router.post('/add', upload.single("thumbnail"), isLoggedIn, authorizedUser("ADMIN"), createProduct);
+router.post('/add', upload.single("thumbnail"),  authorizedUser("ADMIN"), createProduct);
 
 // Route to update an existing course (HTTP PUT method)
-router.put('/update/:id', upload.single("thumbnail"), isLoggedIn, authorizedUser("ADMIN"), updateProduct);
+router.put('/update/:id', upload.single("thumbnail"),  authorizedUser("ADMIN"), updateProduct);
 
 // Route to delete an existing course (HTTP DELETE method)
-router.delete('/remove/:id', isLoggedIn, authorizedUser("ADMIN"), deleteProduct);
+router.delete('/remove/:id',  authorizedUser("ADMIN"), deleteProduct);
 
 // Exporting the router instance for use in other parts of the application
 export default router;
