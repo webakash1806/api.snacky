@@ -11,11 +11,11 @@ import { isLoggedIn } from "../middlewares/auth.middleware.js";
 
 const router = Router()
 
-router.post("/add", isLoggedIn, addToCart);
-router.get("/", isLoggedIn, getCartItems);
-router.delete("/remove/order-confirm/:id", isLoggedIn, removeCartAfterOrder);
-router.put("/update/:cartId/:itemId/:qnt/:price", isLoggedIn, updateCart);
-router.post("/remove/:cartId/:itemId", isLoggedIn, removeFromCart);
+router.post("/add",  addToCart);
+router.get("/",  getCartItems);
+router.delete("/remove/order-confirm/:id",  removeCartAfterOrder);
+router.put("/update/:cartId/:itemId/:qnt/:price",  updateCart);
+router.post("/remove/:cartId/:itemId",  removeFromCart);
 
 
 export default router
