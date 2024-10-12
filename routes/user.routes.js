@@ -33,7 +33,7 @@ router.post('/login', loginAuth, login)
 router.get('/logout', logout)
 
 // Route to get user profile information, requires user to be logged in (isLoggedIn)
-router.get('/me', isLoggedIn, profile)
+router.get('/me',  profile)
 
 // Route for initiating the forgot password process
 router.post('/forgot-password', forgotPassword)
@@ -42,14 +42,14 @@ router.post('/forgot-password', forgotPassword)
 router.post('/reset-password/:resetToken', resetPassword)
 
 // Route for changing the user's password, requires user to be logged in
-router.post('/change-password', isLoggedIn, changePassword)
+router.post('/change-password',  changePassword)
 
 // Route for updating user profile information with optional avatar upload
-router.put('/update/:id', isLoggedIn, upload.single("avatar"), updateProfile)
+router.put('/update/:id',  upload.single("avatar"), updateProfile)
 
-router.put('/addDeliveryData/:id', isLoggedIn, addDeliveryData)
+router.put('/addDeliveryData/:id',  addDeliveryData)
 
-router.put('/number', isLoggedIn, addNumber)
+router.put('/number',  addNumber)
 
 
 // Exporting the router instance to be used in the main application
